@@ -1,0 +1,17 @@
+.walking-girl {
+    position: absolute;
+    top: 40%;
+    left: -150px;
+    animation: walk-in 16s forwards;
+    width: 120px;
+    height: auto;
+}
+
+@keyframes walk-in {
+    0%{
+        transform: translateX(0)
+    }
+    100% {
+        transform: translateX(50vw);
+    }
+}

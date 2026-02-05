@@ -1,16 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HomePage from './HomePage/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      
-       
-        <h1> Portfolio coming soon</h1>
-      </header>
+      <HomePage />
     </div>
   );
 }
