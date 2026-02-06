@@ -1,10 +1,10 @@
 import React from "react";
-import WalkingGirl from "./Animation/WalkingGirl";
+import AnimationsHomePage from "./Animation/Animations"
 
 const LandingScreen = () => {
     return(
         <React.Fragment>
-            <WalkingGirl />
+            <AnimationsHomePage />
         </React.Fragment>
     )
 }
