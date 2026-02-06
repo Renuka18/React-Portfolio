@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Lottie from 'lottie-react';
 import WalkingGirlAnime from '../../Assets/WomanWalkWithSuitCase.json';
 import PointingLady from '../../Assets/Womandoingpresentation.json';
+import Womanwaving from '../../Assets/Womanwavinghand.json';
 import './Animation.css';
 import IntroCard from './Introcard';
 
@@ -10,7 +11,31 @@ const WalkingGirl = () => {
   const [showPointing, setShowPointing] = useState(false);
   const [fadeOutWalk, setFadeOutWalk] = useState(false);
   const [showIntroCard, setShowIntroCard] = useState(false);
+  const [dropOut, setDropOut] = useState(false);
 
+  const [showFunnyExit, setShowFunnyExit] = useState(false);
+  const [doJump, setDoJump] = useState(false);
+  const [showHole, setShowHole] = useState(false);
+  const [showExitMessage, setShowExitMessage] = useState(false);
+  
+  const handleNo = () => {
+    setShowIntroCard(false);
+    setShowPointing(false);
+  
+    setTimeout(() => {
+      setShowFunnyExit(true);
+      setShowHole(true);
+  
+      setTimeout(() => {
+        setDoJump(true);
+  
+        setTimeout(() => {
+          setShowExitMessage(true);
+        }, 1200); // after jump animation
+      }, 2000); // wait for waving
+    }, 500);
+  };
+  
   useEffect(() => {
     const stopTime = 3000;
 
@@ -36,9 +61,6 @@ const WalkingGirl = () => {
     alert("Redirect to About Page or animate to it.");
   };
 
-  const handleNo = () => {
-    alert("You missed a golden opportunity!");
-  };
 
   return (
     <div className="walking-girl">
@@ -53,7 +75,6 @@ const WalkingGirl = () => {
 
         />
       )}
-
       {showPointing && (
         <Lottie
           animationData={PointingLady}
@@ -69,6 +90,19 @@ const WalkingGirl = () => {
           <IntroCard onYes={handleYes} onNo={handleNo}/>
         </div>
       )}
+      {showFunnyExit && (
+  <div className={`funny-exit ${doJump ? 'jump-into-hole' : ''}`}>
+    <Lottie
+      animationData={Womanwaving}
+      autoplay
+      loop={!doJump} // stop looping when jumping
+      style={{ width: '45vw', maxWidth: '250px', height: 'auto' }}
+      />
+  </div>
+)}
+{showExitMessage && (
+  <div className="exit-message">Maybe next time! 👋</div>
+)}
     </div>
   );
 };
