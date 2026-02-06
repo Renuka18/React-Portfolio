@@ -1,13 +1,13 @@
 import React from "react";
 import './Homepage.css';
-import LandingScreen from "./LandingScreen";
+import AnimationsHomePage from "./Animation/Animations";
 
 
 const HomePage = () => {
     return (
         <React.Fragment>
             <div className="container">
-            <LandingScreen />
+            <AnimationsHomePage />
             </div>
         </React.Fragment>
     )

@@ -1,18 +1,19 @@
 .walking-girl {
   position: absolute;
   top: 50%;
-  left: -150px;
   transform: translate(-50%, -50%);
-  animation: walk-in 5s forwards;
+  animation: walk-in 5s ease-out forwards;
   display: flex;
+  align-items: center;
 }
 
+/* Responsive Walk-in Animation */
 @keyframes walk-in {
   0% {
-    transform: translate(0, -50%);
+    left: -30vw; /* Start off-screen */
   }
   100% {
-    transform: translate(50vw, -50%);
+    left: 50vw;  /* End around center */
   }
 }
 
@@ -35,35 +36,4 @@
   to {
     opacity: 1;
   }
-}
-
-.intro-card {
-  background-color: #ffffffcc;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  animation: fadeIn 1s ease-in-out forwards;
-  font-family: sans-serif;
-  width: 180px;
-}
-
-.buttons {
-  margin-top: 10px;
-}
-
-button {
-  margin: 5px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 6px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #388E3C;
 }

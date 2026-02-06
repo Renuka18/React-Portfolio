@@ -49,7 +49,8 @@ const WalkingGirl = () => {
           autoplay
           loop
           className={fadeOutWalk ? 'fade-out' : 'visible'}
-          style={{ width: '150px', height: 'auto' }}
+          style={{ width: '25vw', maxWidth: '150px', height: 'auto' }}
+
         />
       )}
 
@@ -64,13 +65,6 @@ const WalkingGirl = () => {
       )}
 
       {showIntroCard && (
-        // <div className="intro-card">
-        //   <p>Hello, I'm Renuka 👋<br />Do you want to know more about me?</p>
-        //   <div className="buttons">
-        //     <button onClick={handleYes}>Yes</button>
-        //     <button onClick={handleNo}>No</button>
-        //   </div>
-        // </div>
         <div>
           <IntroCard onYes={handleYes} onNo={handleNo}/>
         </div>
