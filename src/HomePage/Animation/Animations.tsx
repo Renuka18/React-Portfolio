@@ -6,7 +6,7 @@ import Womanwaving from '../../Assets/Womanwavinghand.json';
 import './Animation.css';
 import IntroCard from './Introcard';
 
-const WalkingGirl = () => {
+const WalkingGirl = ({ onYesClick }: { onYesClick: () => void }) => {
   const walkRef = useRef<any>(null);
   const [showPointing, setShowPointing] = useState(false);
   const [fadeOutWalk, setFadeOutWalk] = useState(false);
@@ -17,25 +17,25 @@ const WalkingGirl = () => {
   const [doJump, setDoJump] = useState(false);
   const [showHole, setShowHole] = useState(false);
   const [showExitMessage, setShowExitMessage] = useState(false);
-  
+
   const handleNo = () => {
     setShowIntroCard(false);
     setShowPointing(false);
-  
+
     setTimeout(() => {
       setShowFunnyExit(true);
       setShowHole(true);
-  
+
       setTimeout(() => {
         setDoJump(true);
-  
+
         setTimeout(() => {
           setShowExitMessage(true);
         }, 1200); // after jump animation
       }, 2000); // wait for waving
     }, 500);
   };
-  
+
   useEffect(() => {
     const stopTime = 3000;
 
@@ -58,7 +58,9 @@ const WalkingGirl = () => {
   }, []);
 
   const handleYes = () => {
-    alert("Redirect to About Page or animate to it.");
+    setShowIntroCard(false);
+    setShowPointing(false);
+    onYesClick();
   };
 
 
@@ -87,25 +89,25 @@ const WalkingGirl = () => {
 
       {showIntroCard && (
         <div>
-          <IntroCard onYes={handleYes} onNo={handleNo}/>
+          <IntroCard onYes={handleYes} onNo={handleNo} />
         </div>
       )}
       {showFunnyExit && (
-  <div className={`funny-exit ${doJump ? 'jump-into-hole' : ''}`}>
-    <Lottie
-      animationData={Womanwaving}
-      autoplay
-      loop={!doJump} // stop looping when jumping
-      style={{ width: '45vw', maxWidth: '250px', height: 'auto' }}
-      />
-  </div>
-)}
-{showExitMessage && (
-  <div className="exit-message">
-  She’s gone... Missed a Golden Oppurtunity <br /> Maybe next time! 👋
-</div>
+        <div className={`funny-exit ${doJump ? 'jump-into-hole' : ''}`}>
+          <Lottie
+            animationData={Womanwaving}
+            autoplay
+            loop={!doJump} // stop looping when jumping
+            style={{ width: '45vw', maxWidth: '250px', height: 'auto' }}
+          />
+        </div>
+      )}
+      {showExitMessage && (
+        <div className="exit-message">
+          She’s gone... Missed a Golden Oppurtunity <br /> Maybe next time! 👋
+        </div>
 
-)}
+      )}
     </div>
   );
 };
