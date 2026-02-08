@@ -101,7 +101,10 @@ const WalkingGirl = () => {
   </div>
 )}
 {showExitMessage && (
-  <div className="exit-message">Maybe next time! 👋</div>
+  <div className="exit-message">
+  She’s gone... Missed a Golden Oppurtunity <br /> Maybe next time! 👋
+</div>
+
 )}
     </div>
   );

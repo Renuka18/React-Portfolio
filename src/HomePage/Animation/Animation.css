@@ -69,9 +69,26 @@
 }
 
 .exit-message {
-  animation: fadeIn 1s ease-in forwards;
-  font-size: 1.4rem;
-  color: white;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #fffdf5; /* off-white for better contrast */
   text-align: center;
-  margin-top: 2rem;
+  font-weight: 600;
+  z-index: 10;
+  animation: fade-in-up 1.2s ease-in forwards;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4); /* slight glow */
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
