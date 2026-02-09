@@ -39,7 +39,7 @@ const AboutMe = () => {
     <div className="about-container">
       {/* Left-side Girl */}
       <div className={`about-girl ${hideGirl ? 'fade-out' : ''}`}>
-        <Lottie animationData={WandGirlAnimation} loop autoplay style={{ width: '250px' }} />
+        <Lottie animationData={WandGirlAnimation} loop autoplay />
       </div>
       {/* Curtain Overlay */}
       {!curtainOpen && (
