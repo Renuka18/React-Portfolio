@@ -68,12 +68,13 @@
   flex-wrap: wrap;
   padding: 60px 40px;
   text-align: center;
+  min-height: 100vh;
 }
 
 .circle-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,8 +113,8 @@
   height: 300px;
 }
 .icon3{
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 .icon2 {
   width: 150px;
@@ -123,11 +124,11 @@
 /* Increase distance from center */
 .icon1 { transform: rotate(0deg) translate(380px) rotate(0deg); }
 .icon2 { transform: rotate(35deg) translate(380px) rotate(-45deg); }
-.icon3 { transform: rotate(90deg) translate(280px) rotate(-90deg); }
+.icon3 { transform: rotate(90deg) translate(250px) rotate(-90deg); }
 .icon4 { transform: rotate(145deg) translate(400px) rotate(-135deg); }
 .icon5 { transform: rotate(180deg) translate(400px) rotate(-180deg); }
 .icon6 { transform: rotate(215deg) translate(400px) rotate(-200deg); }
-.icon7 { transform: rotate(270deg) translate(300px) rotate(-270deg); }
+.icon7 { transform: rotate(270deg) translate(280px) rotate(-270deg); }
 .icon8 { transform: rotate(330deg) translate(400px) rotate(-340deg); }
 
 
@@ -137,11 +138,10 @@
   height: 100%;
 }
 
-/* Optional: Tooltip on hover */
 .circle-icon:hover::after {
   content: attr(data-label);
   position: absolute;
-  bottom : 0px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
@@ -152,26 +152,37 @@
   white-space: nowrap;
 }
 
+
 /* Responsive adjustment */
 
 @media screen and (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
   .circle-container {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: auto;
-    padding: 40px 20px;
-  }
-
+    padding: 60px 20px;
+    gap:  40px;
+    top: 20%;
+  } 
+ 
+  
   .center-photo {
-    position: relative;
-    top: 0;
-    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* position: absolute; */
+    top: 15%;
+    left: 5%;
     transform: none;
     margin-bottom: 20px;
     z-index: 2;
   }
-
+  
   .photo-sticker {
     max-width: 120px;
   }
@@ -179,16 +190,14 @@
   .circle-icon {
     position: relative !important;
     transform: none !important;
-    width: 80px;
-    height: 80px;
-    margin: 10px 0;
+    width: 100px;
+    height: 100px;
   }
-
   /* Specific larger icons for mobile if needed */
   .icon3,
   .icon7 {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   /* Optional: Center Lottie animation within each icon */
@@ -197,12 +206,21 @@
     height: 100%;
   }
   .circle-icon::after {
-    content: attr(data-label);
+    position: static;
+    transform: none;
     display: block;
-    text-align: center;
-    margin-top: 6px;
+    margin-top: 8px;
     font-size: 14px;
-    color: #333;
+  }
+  .icon1,
+  .icon2,
+  .icon3,
+  .icon4,
+  .icon5,
+  .icon6,
+  .icon7,
+  .icon8 {
+    transform: none !important;
   }
 
   .circle-icon:hover::after {

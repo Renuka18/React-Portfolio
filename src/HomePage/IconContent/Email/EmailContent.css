@@ -1,0 +1,67 @@
+.email-modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+    gap: 40px;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .email-modal-left {
+    width: 180px;
+    flex-shrink: 0;
+  }
+  
+  .email-modal-left > div {
+    width: 100%;
+    height: auto;
+  }
+  
+  .email-modal-right {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .email-modal-heading {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .email-modal-right p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  .email-address {
+    font-weight: bold;
+    color: #ff69b4;
+  }
+  
+  .email-address a {
+    color: #ff69b4;
+    text-decoration: none;
+  }
+  
+  .email-response-note {
+    font-size: 13px;
+    color: gray;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .email-modal-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .email-modal-left {
+      width: 140px;
+    }
+  
+    .email-modal-right {
+      text-align: center;
+    }
+  }
+  

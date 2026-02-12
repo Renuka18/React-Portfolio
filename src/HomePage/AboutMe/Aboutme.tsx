@@ -12,11 +12,29 @@ import Phone from "../../Assets/Phone.json";
 import Experience2 from "../../Assets/experience2.json";
 import Resume from "../../Assets/Resume.json";
 import Hobbies from "../../Assets/Hobbies.json";
+import Modal from "../SlideModal/SlideModal";
+import EmailContent from "../IconContent/Email/EmailContent";
+import PhoneContent from "../IconContent/Phone/PhoneContent";
+import LinkedinContent from "../IconContent/Linkedin/LinkedinContent";
+import HobbiesContent from "../IconContent/Hobbies/Hobbies";
 
 const AboutMe = () => {
   const [curtainOpen, setCurtainOpen] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [hideGirl, setHideGirl] = useState(false);
+  const [selected, setSelected] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpen = (type: string) => {
+    setSelected(type);
+    setIsModalOpen(true)
+  };
+
+  const handleClose = () => {
+    setSelected(null);
+    setIsModalOpen(false)
+
+  };
 
   useEffect(() => {
     // 1. Curtain finishes opening
@@ -66,33 +84,51 @@ const AboutMe = () => {
 
             {/* Circular Lottie Icons */}
 
-            <div className="circle-icon icon1" data-label="Email">
+            <div className="circle-icon icon1" data-label="Email" onClick={() => handleOpen("Email")}>
               <Lottie animationData={Email} loop autoplay />
             </div>
-            <div className="circle-icon icon2" data-label="Phone">
+            <div className="circle-icon icon2" data-label="Phone" onClick={() => handleOpen("Phone")}>
               <Lottie animationData={Phone} loop autoplay />
             </div>
-            <div className="circle-icon icon3" data-label="LinkedIn">
+            <div className="circle-icon icon3" data-label="LinkedIn" onClick={() => handleOpen("LinkedIn")}>
               <Lottie animationData={Linkedin} loop autoplay />
             </div>
-            <div className="circle-icon icon4" data-label="Resume">
+            <div className="circle-icon icon4" data-label="Resume" onClick={() => handleOpen("Resume")}>
               <Lottie animationData={Resume} loop autoplay />
             </div>
-            <div className="circle-icon icon5" data-label="Skills">
+            <div className="circle-icon icon5" data-label="Skills" onClick={() => handleOpen("Skills")}>
               <Lottie animationData={Skills} loop autoplay />
             </div>
-            <div className="circle-icon icon6" data-label="Education">
+            <div className="circle-icon icon6" data-label="Education" onClick={() => handleOpen("Education")}>
               <Lottie animationData={Education} loop autoplay />
             </div>
-            <div className="circle-icon icon7" data-label="Experience">
+            <div className="circle-icon icon7" data-label="Experience" onClick={() => handleOpen("Experience")}>
               <Lottie animationData={Experience2} loop autoplay />
             </div>
-            <div className="circle-icon icon8" data-label="Hobbies">
+            <div className="circle-icon icon8" data-label="Hobbies" onClick={() => handleOpen("Hobbies")}>
               <Lottie animationData={Hobbies} loop autoplay />
             </div>
           </div>
 
         </div>}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleClose}
+      >
+        {selected === "Email" && <EmailContent />}
+        {selected === "Phone" && <PhoneContent />}
+        {selected === "LinkedIn" && <LinkedinContent />}
+        {selected === "Hobbies" && <HobbiesContent />}
+        {selected === "Skills" && (
+          <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Animation</li>
+          </ul>
+        )}
+        {/* Add others as needed */}
+      </Modal>
+
     </div>
   );
 };

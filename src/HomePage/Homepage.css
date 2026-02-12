@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: auto;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -12,6 +12,7 @@
     padding: 1rem;
     box-sizing: border-box;
     position: relative;
+    min-height: 100vh;
   }
 
   @media screen and (max-width: 768px) {

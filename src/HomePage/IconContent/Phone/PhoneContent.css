@@ -1,0 +1,21 @@
+.modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    animation: swoopIn 0.6s ease-out forwards;
+    padding: 20px;
+  }
+  
+  .modal-lottie {
+    flex: 0 0 150px;
+    max-width: 150px;
+  }
+  
+  .modal-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
