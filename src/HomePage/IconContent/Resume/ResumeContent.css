@@ -1,0 +1,17 @@
+.resume-modal-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .resume-left {
+    flex: 1;
+    max-width: 150px;
+  }
+  
+  .resume-right {
+    flex: 2;
+    text-align: left;
+  }
+  

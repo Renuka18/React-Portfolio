@@ -17,6 +17,10 @@ import EmailContent from "../IconContent/Email/EmailContent";
 import PhoneContent from "../IconContent/Phone/PhoneContent";
 import LinkedinContent from "../IconContent/Linkedin/LinkedinContent";
 import HobbiesContent from "../IconContent/Hobbies/Hobbies";
+import ResumeContent from "../IconContent/Resume/ResumeContent";
+import EducationContent from "../IconContent/Education/Education";
+import SkillsContent from "../IconContent/Skills/Skills";
+import ExperienceContent from "../IconContent/Experience/Experience";
 
 const AboutMe = () => {
   const [curtainOpen, setCurtainOpen] = useState(false);
@@ -119,13 +123,10 @@ const AboutMe = () => {
         {selected === "Phone" && <PhoneContent />}
         {selected === "LinkedIn" && <LinkedinContent />}
         {selected === "Hobbies" && <HobbiesContent />}
-        {selected === "Skills" && (
-          <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Animation</li>
-          </ul>
-        )}
+        {selected === "Resume" && <ResumeContent />}
+        {selected === "Education" && <EducationContent />}
+        {selected === "Skills" && <SkillsContent />}
+        {selected === "Experience" && <ExperienceContent />}
         {/* Add others as needed */}
       </Modal>
 
