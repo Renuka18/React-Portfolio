@@ -14,7 +14,7 @@ const ResumeContent = () => {
         <h2>Ready to Collaborate?</h2>
         <p>
           Grab a copy of my resume and let’s work together! Whether it’s a
-          freelance opportunity or a full-time role, I’m open to new
+         a full-time role or contract oppurtunity, I’m open to new
           possibilities.
         </p>
         <a

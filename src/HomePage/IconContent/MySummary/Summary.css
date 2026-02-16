@@ -1,0 +1,45 @@
+.modal-split-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .modal-left {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-left > * {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .modal-right {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .modal-right h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .modal-right p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .modal-split-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .modal-left > * {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  

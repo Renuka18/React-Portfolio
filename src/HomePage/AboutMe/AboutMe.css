@@ -90,6 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
 }
 
@@ -107,6 +108,8 @@
   position: absolute;
   width: 200px;
   height: 200px;
+  cursor: pointer;
+
 }
 .icon7{
   width: 300px;

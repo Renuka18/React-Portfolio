@@ -13,7 +13,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>×</button>
+        <button className="modal-close" onClick={onClose}><span> X </span></button>
         <div className="modal-body">{children}</div>
       </div>
     </div>

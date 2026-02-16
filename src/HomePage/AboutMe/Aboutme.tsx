@@ -21,6 +21,7 @@ import ResumeContent from "../IconContent/Resume/ResumeContent";
 import EducationContent from "../IconContent/Education/Education";
 import SkillsContent from "../IconContent/Skills/Skills";
 import ExperienceContent from "../IconContent/Experience/Experience";
+import SummaryContent from "../IconContent/MySummary/Summary";
 
 const AboutMe = () => {
   const [curtainOpen, setCurtainOpen] = useState(false);
@@ -82,8 +83,9 @@ const AboutMe = () => {
         <div className={`about-content ${curtainOpen ? 'visible' : 'hidden'}`}>
           <div className="circle-container">
             {/* Center Photo */}
+
             <div className="center-photo">
-              <img src={Mypicture} alt="Renuka" className="photo-sticker" />
+              <img src={Mypicture} alt="Renuka" className="photo-sticker" onClick={() => handleOpen("Summary")} />
             </div>
 
             {/* Circular Lottie Icons */}
@@ -109,8 +111,8 @@ const AboutMe = () => {
             <div className="circle-icon icon7" data-label="Experience" onClick={() => handleOpen("Experience")}>
               <Lottie animationData={Experience2} loop autoplay />
             </div>
-            <div className="circle-icon icon8" data-label="Hobbies" onClick={() => handleOpen("Hobbies")}>
-              <Lottie animationData={Hobbies} loop autoplay />
+            <div className="circle-icon icon8" data-label="Hobbies" >
+              <Lottie animationData={Hobbies} loop autoplay onClick={() => handleOpen("Hobbies")}/>
             </div>
           </div>
 
@@ -127,6 +129,7 @@ const AboutMe = () => {
         {selected === "Education" && <EducationContent />}
         {selected === "Skills" && <SkillsContent />}
         {selected === "Experience" && <ExperienceContent />}
+        {selected === "Summary" && <SummaryContent />}
         {/* Add others as needed */}
       </Modal>
 
