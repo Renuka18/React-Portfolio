@@ -103,10 +103,16 @@ const WalkingGirl = ({ onYesClick }: { onYesClick: () => void }) => {
         </div>
       )}
       {showExitMessage && (
-        <div className="exit-message">
-          She’s gone... Missed a Golden Oppurtunity <br /> Maybe next time! 👋
-        </div>
-
+        
+        <div className="exit-container">
+  <div className="exit-card">
+    <h2>Oops…</h2>
+    <p>
+      You just missed a <span className="highlight">Golden Opportunity</span> ✨
+    </p>
+    <p className="sub-text">Maybe next time! 👋</p>
+  </div>
+</div>
       )}
     </div>
   );
