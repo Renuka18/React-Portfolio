@@ -169,7 +169,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 60px 20px;
     gap:  30px;
   } 
  
@@ -193,8 +192,25 @@
   .circle-icon {
     position: relative !important;
     transform: none !important;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.6s ease forwards;
+  }
+  .circle-icon:nth-child(2) { animation-delay: 0.1s; }
+  .circle-icon:nth-child(3) { animation-delay: 0.2s; }
+  .circle-icon:nth-child(4) { animation-delay: 0.3s; }
+  .circle-icon:nth-child(5) { animation-delay: 0.4s; }
+  .circle-icon:nth-child(6) { animation-delay: 0.5s; }
+  .circle-icon:nth-child(7) { animation-delay: 0.6s; }
+  .circle-icon:nth-child(8) { animation-delay: 0.7s; }
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   /* Specific larger icons for mobile if needed */
   .icon3,
@@ -205,8 +221,8 @@
 
   /* Optional: Center Lottie animation within each icon */
   .circle-icon > * {
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
   }
   .circle-icon::after {
     position: static;
