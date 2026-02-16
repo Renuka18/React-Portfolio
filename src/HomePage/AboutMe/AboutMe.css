@@ -164,30 +164,30 @@
   }
 
   .circle-container {
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: auto;
     padding: 60px 20px;
-    gap:  40px;
-    top: 20%;
+    gap:  30px;
   } 
  
   
   .center-photo {
-    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* position: absolute; */
-    top: 15%;
-    left: 5%;
-    transform: none;
-    margin-bottom: 20px;
-    z-index: 2;
+    display: flex;
+    position: relative !important; 
+    top: unset;
+    left: unset;
+    transform: none !important;
+    margin-bottom: 30px;
+    width: 100%;
   }
   
   .photo-sticker {
-    max-width: 120px;
+    max-width: 130px;
   }
 
   .circle-icon {
